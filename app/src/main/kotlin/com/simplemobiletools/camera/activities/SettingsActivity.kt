@@ -77,7 +77,8 @@ class SettingsActivity : SimpleActivity() {
     }
 
     private fun setupPurchaseThankYou() {
-        settings_purchase_thank_you_holder.beGoneIf(isOrWasThankYouInstalled())
+//        settings_purchase_thank_you_holder.beGoneIf(isOrWasThankYouInstalled())
+        settings_purchase_thank_you_holder.beGoneIf(true)
         settings_purchase_thank_you_holder.setOnClickListener {
             launchPurchaseThankYouIntent()
         }
@@ -169,7 +170,8 @@ class SettingsActivity : SimpleActivity() {
         settings_save_photos_label.text = addLockedLabelIfNeeded(R.string.save_photos)
         settings_save_photos.text = getLastPart(config.savePhotosFolder)
         settings_save_photos_holder.setOnClickListener {
-            if (isOrWasThankYouInstalled()) {
+//            if (isOrWasThankYouInstalled()) {
+            if (true) {
                 FilePickerDialog(this, config.savePhotosFolder, false, showFAB = true) {
                     val path = it
                     handleSAFDialog(it) { success ->
